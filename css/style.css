@@ -1,0 +1,95 @@
+* {
+    box-sizing: border-box;
+}
+
+.grid {
+    display: grid;
+    min-height: 100vh;
+    grid-template-columns: 300px 1fr 200px;
+    grid-template-rows: 100px 50px 1fr 100px;
+    grid-template-areas:
+        "hd hd hd"
+        "nv nv nv"
+        "lf mn rg"
+        "ft ft ft";
+}
+
+.header {
+    background-color: yellow;
+    color: white;
+    grid-area: hd;
+}
+
+.navbar {
+    background-color: indigo;
+    color: white;
+    grid-area: nv;
+}
+
+.main {
+    background-color: red;
+    color: white;
+    grid-area: mn;
+}
+
+.left {
+    background-color: green;
+    color: white;
+    grid-area: lf;
+}
+
+.right {
+    background-color: blue;
+    color: white;
+    grid-area: rg;
+}
+
+.footer {
+    background-color: magenta;
+    color: white;
+    grid-area: ft;
+}
+
+@media (max-width: 1300px) {
+    .grid {
+        display: grid;
+        min-height: 100vh;
+        grid-template-columns: 300px 1fr;
+        grid-template-rows: 100px 50px 2fr 1fr 100px;
+        grid-template-areas:
+            "hd hd"
+            "lf nv"
+            "lf mn"
+            "lf rg"
+            "ft ft";
+    }
+}
+
+@media (max-width: 992px) {
+    .grid {
+        display: grid;
+        min-height: 100vh;
+        grid-template-columns: 50px 1fr 1fr;
+        grid-template-rows: 100px 2fr 1fr 100px;
+        grid-template-areas:
+            "nv hd hd"
+            "nv mn mn"
+            "nv lf rg"
+            "nv ft ft";
+    }
+}
+
+@media (max-width: 768px) {
+    .grid {
+        display: grid;
+        min-height: 100vh;
+        grid-template-columns: 50px 1fr;
+        grid-template-rows: 100px 50px 2fr 1fr 100px;
+        grid-template-areas:
+            "nv hd"
+            "nv mn"
+            "nv lf"
+            "nv rg"
+            "nv ft";
+    }
+}
